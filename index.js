@@ -77,8 +77,8 @@ $(() => {
                 }
                 return true;
             });
-            const bestWord = validWords.sort((a, b) => a.length < b.length ? 1 : a.length > b.length ? -1 : 0)[0];
-            if (bestWord) bestWordElement.text(bestWord.toUpperCase());
+            const bestWords = validWords.sort((a, b) => a.length < b.length ? 1 : a.length > b.length ? -1 : 0).slice(0, 50);
+            if (bestWords) bestWordElement.html(bestWords.map(w => w.toUpperCase()).join("<br>"));
         };
     });
 });
